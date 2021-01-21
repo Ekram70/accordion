@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  list-style-type: none;
+  background-color: #efefef;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  white-space: pre;
+  cursor: pointer;
+}
+
+.content {
+  display: inline-block;
+  margin: 5% 0px;
+  box-shadow: 10px 10px 6px -10px #049372;
+}
+
+.accordion {
+  width: 280px;
+}
+
+.accordion--item {
+  border-top: 1px solid #049372;
+  overflow: hidden;
+}
+
+.accordion--item .btn,
+.accordion--item .btn--first,
+.accordion--item .btn--last {
+  display: block;
+  padding: 1rem 1.2rem;
+  background: #03a678;
+  color: #fff;
+  position: relative;
+  padding-left: 40px;
+  height: 100%;
+  width: 100%;
+}
+
+.accordion--item:hover .btn {
+  background-color: #049372;
+}
+
+.accordion--item .btn:before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background: #03a678;
+  transform: rotate(45deg);
+  left: 20px;
+  bottom: -7px;
+}
+
+.accordion--item:hover .btn:before {
+  background-color: #049372;
+}
+
+.accordion--item .btn:hover::before {
+  background-color: #049372;
+}
+
+.accordion--item .btn:after {
+  content: "";
+  position: absolute;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: #fff;
+  transform: rotate(45deg);
+  left: 16px;
+  top: 45%;
+}
+
+.accordion--item .btn--special:after,
+.accordion--item .btn--special::before {
+  background: transparent;
+}
+
+.accordion--item .btn--color {
+  background: #049372;
+}
+
+.accordion--item:target .accordion--submenu {
+  max-height: 50rem;
+  /*change this whenever needed*/
+}
+
+.accordion--submenu {
+  background: #383838;
+  transition: max-height 0.4s;
+  display: none;
+}
+
+.accordion--submenu a {
+  display: block;
+  position: relative;
+  padding: 0.8rem 3rem;
+  color: #fff;
+  font-size: 0.9rem;
+  margin: 0;
+  width: 280px;
+}
+
+.accordion--submenu a:hover {
+  background-color: rgba(82, 80, 80, 0.2);
+}
+
+.accordion--submenu a::before {
+  content: "";
+  position: absolute;
+  width: 0.45rem;
+  height: 100%;
+  background: #049372;
+  left: 0px;
+  top: 0;
+  transition: 0.4s;
+  opacity: 0;
+}
+
+.accordion--submenu a:hover::before {
+  opacity: 1;
+}
